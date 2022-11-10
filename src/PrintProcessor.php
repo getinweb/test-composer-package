@@ -21,11 +21,11 @@ class PrintProcessor
         $level_padding = str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $level);
 
         if ((gettype($arr) === 'object') || (gettype($arr) === 'array')) {
-            foreach ($arr as $item) {
-
+            foreach ($arr as $key => $item) {
                 if ((gettype($item) === 'object') || (gettype($item) === 'array')) {
-                    $result .= $level_padding . "['" . gettype($item) . "']<br>";
+                    $result .= $level_padding . "'" . $key . "' => [<br>";
                     $result .= self::print_array($item, $level + 1);
+                    $result .= $level_padding . "]<br>";
                 } else {
                     $result .= $level_padding . "'" . $item . "' => " . $item . "<br>";
                 }
