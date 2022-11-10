@@ -1,0 +1,19 @@
+{
+    "name": "getinweb/test-composer-package",
+    "description": "Test version of composer package",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Getinweb\\TestComposerPackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "getinweb",
+            "email": "info@getinweb.site"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    }
+}
