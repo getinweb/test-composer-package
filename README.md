@@ -1,20 +1,44 @@
-# Название пакета
+# Test composer package
 
-Краткое описание пакета
+Contains simple example class with static method, 
+which prepares array to formatted output 
 
-## Требования
+## Requirements
 
-- PHP 8.1
+- PHP 7.4
 
-## Установка
+## Installation
 
 ```bash
 $ composer require getinweb/test-composer-package
 ```
 
-## Использование
+## Usage
 
 ```php
 <?php
 
+$arr = [
+        'level1' => [
+            '1' => 1,
+            'level2' => [
+                '2' => 2,
+                'level3' => 3,
+            ],
+        ]
+    ];
+
+echo PrintProcessor::print_array($arr);
+
+/**
+ * Result will be something like this
+ * 
+ * 'level1' => [
+ *     '1' => 1
+ *     'level2' => [
+ *          '2' => 2
+ *          '3' => 3
+ *     ]
+ *]
+*/
 ```
