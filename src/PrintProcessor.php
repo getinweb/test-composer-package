@@ -18,17 +18,16 @@ class PrintProcessor
         $result = "";
 
         //The padding given at the beginning of the line.
-        $level_padding = str_repeat("    ", $level + 1);
+        $level_padding = str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $level);
 
         if ((gettype($arr) === 'object') || (gettype($arr) === 'array')) {
             foreach ($arr as $item) {
-                $value = $arr[$item];
 
-                if ((gettype($arr) === 'object') || (gettype($arr) === 'array')) {
-                    $result .= $level_padding . "'" . $item . "' ...\n";
-                    $result .= self::print_array($value, $level + 1);
+                if ((gettype($item) === 'object') || (gettype($item) === 'array')) {
+                    $result .= $level_padding . "['" . gettype($item) . "']<br>";
+                    $result .= self::print_array($item, $level + 1);
                 } else {
-                    $result .= $level_padding . "'" . $item . "' => \"" . $value . "\"\n";
+                    $result .= $level_padding . "'" . $item . "' => " . $item . "<br>";
                 }
             }
         } else {
