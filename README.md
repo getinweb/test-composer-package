@@ -5,7 +5,7 @@ which prepares array to formatted output
 
 ## Requirements
 
-- PHP 7.4
+- PHP ^7.0 || ^8.0
 
 ## Installation
 
